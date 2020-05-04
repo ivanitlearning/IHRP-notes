@@ -1,4 +1,4 @@
-# IHRP-notes
+# IHRP notes
 Collection of notes taken for eLS IHRP course
 
 ## Network traffic analysis
