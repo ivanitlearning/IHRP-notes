@@ -12,7 +12,8 @@ Logs in **/var/log/suricata/**:
 1. eve.json <- Suricata’s recommended output
 
    Pipe to **less** with colours
-   `elsanalyst@training ~ $ jq -C 'select(.event_type == "alert")' /var/log/suricata/eve_archived.json.1 | less -R`
+   
+   ```elsanalyst@training ~ $ jq -C 'select(.event_type == "alert")' /var/log/suricata/eve_archived.json.1 | less -R```
 2. fast.log
 3. stats.log <- Human-readable statistics log
 
