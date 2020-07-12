@@ -6,12 +6,11 @@
 2. To see nearby events, expand one and look for surrounding documents on right
 <img src="Pics\ELK_see_nearby_events.png" width=400>
 3. Similar to Splunk try to set columns *ProcessId*, *ParentProcessId*, *CommandLine*, *ParentCommandLine*
-4. [Lucene query syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) or [this](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
+4. See this for [Lucene query syntax](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html) or [this](https://lucene.apache.org/core/2_9_4/queryparsersyntax.html)
 5. Filter out CommandLine which starts with **C:\Windows\System32**: 
 ```NOT event_data.CommandLine:"C:\\Windows\\system32\*"```
 6. Like Splunk, note ELK fields are case sensitive while field contents are case-insensitive.
 7. `event_id:("4697" "7045")` - Search for ID 4697 or 7045
-8. 
 
 ## Map out the available sources
 
