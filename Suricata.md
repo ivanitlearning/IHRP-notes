@@ -3,7 +3,7 @@
 Rules in **/etc/suricata/rules/**
 
 Logs in **/var/log/suricata/**:
-1. eve.json <- Suricata’s recommended output
+1. eve.json <- Suricata's recommended output
 
    Pipe to **less** with colours
    
@@ -25,14 +25,14 @@ elsanalyst@training ~ $ sudo suricata -c /etc/suricata/suricata.yaml -s customsi
 3/5/2020 -- 05:34:49 - <Notice> - all 1 packet processing threads, 4 management threads initialized, engine started.
 ```
 
-Run suricata passive mode on `.pcap` files
+Run suricata passively on **.pcap** files
 ```
 elsanalyst@training ~ $ sudo suricata -c /etc/suricata/suricata.yaml -s customsig.rules -r /home/elsanalyst/PCAPs/eicar-com.pcap
 ```
 
 Run suricata passively on .pcap, skip checksum
 ```
-sudo suricata -r PCAPs/eicar-com.pcap -k none -l <path to log>
+sudo suricata -r PCAPs/eicar-com.pcap -k none -l <path to log dir>
 ```
 
 Read [this](https://suricata.readthedocs.io/en/suricata-5.0.3/rules/intro.html) for guide to rules
@@ -62,3 +62,15 @@ Invoke this way
 ```
 elsanalyst@training:/tmp/suricata$ sudo /home/elsanalyst/Desktop/automate_suricata.sh /home/elsanalyst/PCAPs/Sofacy.pcap
 ```
+
+#### Writing suricata rules
+
+Basically the idea is to match text, before, after certain content, taking into account whether it's content modifier or sticky buffer.
+
+#### Suricata content modifiers vs sticky buffers
+
+See [this](https://suricata.readthedocs.io/en/suricata-4.1.4/rules/intro.html#rules-modifiers). Basically modifier means it looks at what precedes the http_thing to match, while sticky buffer precedes the content to match.
+
+#### Prefiltering keywords
+
+What is **fast_pattern**? Explanation with [eg here.](https://suricata.readthedocs.io/en/suricata-4.1.4/rules/prefilter-keywords.html?highlight=fast_pattern). Basically **fast_pattern** is a content modifier which prioritises the Content just preceding it.
