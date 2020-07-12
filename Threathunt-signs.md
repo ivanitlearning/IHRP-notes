@@ -183,7 +183,7 @@ Some misc notes:
   
 3. Logon types: 2 (Interactive), 7 (Unlock), 10 (RemoteInteractive) or 11 (CachedInteractive)
     <img src="Pics/Interactive_logon.png">
-	
+  
 4. Since PTH is used against privileged accounts, look for ID 4672 to find them, then look backwards to see if preceding 4624 is interactive.
     <img src="Pics/Priv_logon_following_NTLM.png" width=800 >
   
